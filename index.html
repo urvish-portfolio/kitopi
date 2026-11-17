@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Urvishkumar Badreshiya: a restaurant shift run on a plan, for the Restaurant Manager - Pizza (Italian Concept) role at Kitopi, Dubai.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23007882'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%23FFFFFF'%3EUB%3C/text%3E%3C/svg%3E">
+<title>Shift OS · Urvishkumar Badreshiya</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Poppins:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a restaurant shift shown as a live operations board; Kitopi's white ground, teal ink, green action colour and soft balloon shapes. Single light theme by design. */
+:root{
+  --bg:#FFFFFF; --soft:#F2F9F9; --mist:#DDF1F3; --line:#D6E4E6;
+  --ink:#1B1B1E; --mute:#55606A;
+  --teal:#007882; --teal-d:#084A52; --sky:#B4E3E8;
+  --green:#93E080; --green-d:#2F7A22; --lav:#BEA9DA; --plum:#582F91; --amber:#F9B726;
+  --f-head:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-body:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--plum);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-head);text-wrap:balance;margin:0;color:var(--ink)}
+h2{font-size:clamp(1.6rem,3.4vw,2.35rem);font-weight:800;line-height:1.15;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:800;line-height:1.3}
+p{margin:0}
+.eyebrow{font-family:var(--f-head);font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+section{padding-block:clamp(56px,8vw,104px)}
+.sec-head{display:grid;gap:10px;max-width:720px;margin-bottom:36px}
+.sec-head p.lede{color:var(--mute)}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
+.name{font-family:var(--f-head);font-weight:900;color:var(--teal);letter-spacing:.02em;white-space:nowrap;font-size:clamp(.9rem,2.6vw,1.05rem);text-transform:uppercase}
+nav.links{display:flex;gap:18px;flex-wrap:wrap}
+nav.links a{font-family:var(--f-head);font-weight:700;font-size:.82rem;color:var(--ink);text-decoration:none}
+nav.links a:hover{color:var(--teal)}
+@media (max-width:720px){nav.links{display:none}}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(40px,6vw,72px) clamp(48px,7vw,88px);overflow:hidden}
+.blob{position:absolute;border-radius:50%;pointer-events:none}
+.b1{width:220px;height:220px;background:var(--lav);opacity:.35;right:-70px;top:-60px}
+.b2{width:120px;height:120px;background:var(--green);opacity:.35;left:-40px;bottom:30px}
+.b3{width:60px;height:60px;background:var(--sky);opacity:.8;right:42%;bottom:-18px}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.02fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+.hero-grid>*{min-width:0}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.6rem);font-weight:900;line-height:1.02;text-transform:uppercase;letter-spacing:-.01em;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p.intro{margin-top:20px;font-size:1.06rem;color:var(--mute);max-width:34em}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-head);font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;padding:13px 20px;border-radius:6px;text-decoration:none;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.btn.go{background:var(--green);color:var(--teal-d)}
+.btn.ghost{border:2px solid var(--teal);color:var(--teal)}
+.btn:hover{transform:translateY(-2px)}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+
+/* the board */
+.board{background:var(--teal-d);color:#EAF7F8;border-radius:18px;padding:18px;box-shadow:0 24px 50px -24px rgba(8,74,82,.55);font-family:var(--f-mono);font-size:.78rem}
+.board-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.14)}
+.board-top .ttl{font-family:var(--f-head);font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.clock{font-size:1.5rem;font-weight:700;color:var(--green)}
+.status{display:inline-flex;align-items:center;gap:6px;background:rgba(147,224,128,.16);color:var(--green);padding:3px 8px;border-radius:99px;font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--green)}
+.panes{display:grid;grid-template-columns:1.35fr 1fr;gap:12px;margin-top:12px}
+.pane{background:rgba(255,255,255,.07);border-radius:12px;padding:12px;min-width:0}
+.pane h4{margin:0 0 8px;font-family:var(--f-head);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);font-weight:800}
+.rail{display:grid;gap:7px}
+.tk{display:flex;justify-content:space-between;gap:8px;background:#fff;color:var(--ink);border-radius:8px;padding:7px 9px;border-left:4px solid var(--teal)}
+.tk b{font-weight:700;white-space:nowrap}
+.tk span{color:var(--mute);text-align:right;font-size:.72rem}
+.tk.al{border-left-color:var(--amber)}
+.tk.dl{border-left-color:var(--lav)}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.checks li{display:flex;align-items:center;gap:7px}
+.checks svg{flex:none}
+.checks path{stroke:var(--green);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:20;stroke-dashoffset:0}
+.checks .pend{opacity:.55}
+.gauges{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g{display:grid;gap:5px}
+.g .lbl{color:var(--sky);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase}
+.g .trk{height:8px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
+.g .trk i{display:block;height:100%;border-radius:99px;background:var(--green);transform-origin:left;transform:scaleX(var(--v))}
+.g .val{font-weight:700}
+.board-foot{margin-top:10px;color:rgba(234,247,248,.6);font-size:.66rem}
+@media (max-width:520px){.panes{grid-template-columns:1fr}.gauges{grid-template-columns:1fr}}
+
+/* story */
+#story{background:var(--soft)}
+.story{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(28px,5vw,64px);align-items:start}
+.story>*{min-width:0}
+.story .steps{display:grid;gap:28px}
+.story .steps p{font-size:1.04rem;max-width:36em}
+.route{position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px);background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.route svg{width:100%;height:auto;display:block}
+.route-line{fill:none;stroke:var(--teal);stroke-width:3;stroke-linecap:round}
+.route-base{fill:none;stroke:var(--mist);stroke-width:3;stroke-dasharray:2 6;stroke-linecap:round}
+.route text{font-family:var(--f-head);font-weight:800;font-size:13px;fill:var(--ink)}
+.stops{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.stops li{display:grid;grid-template-columns:14px 1fr;gap:10px;align-items:start;opacity:.42;transition:opacity .3s ease}
+.stops li.on{opacity:1}
+.stops li::before{content:"";width:12px;height:12px;margin-top:6px;border-radius:50%;border:3px solid var(--teal);background:#fff}
+.stops li.on::before{background:var(--teal)}
+.stops b{font-family:var(--f-head);font-weight:800;font-size:.9rem;display:block}
+.stops span{font-size:.8rem;color:var(--mute)}
+@media (max-width:860px){.story{grid-template-columns:1fr}.route{position:static}}
+
+/* replay */
+.replay{display:grid;grid-template-columns:200px 1fr;gap:clamp(20px,4vw,48px)}
+.replay>*{min-width:0}
+.progress{position:sticky;top:calc(env(safe-area-inset-top,0px) + 88px);align-self:start;display:grid;gap:10px}
+.progress .bar{height:180px;width:8px;border-radius:99px;background:var(--mist);overflow:hidden}
+.progress .bar i{display:block;width:100%;height:100%;background:var(--teal);transform-origin:top;transform:scaleY(1)}
+.progress .day{font-family:var(--f-head);font-weight:900;font-size:1.25rem;line-height:1.1}
+.progress small{color:var(--mute);font-size:.8rem}
+.tickets{display:grid;gap:16px}
+.ticket{display:grid;grid-template-columns:86px 1fr;gap:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;position:relative}
+.ticket::after{content:"";position:absolute;left:96px;top:14px;bottom:14px;border-left:2px dashed var(--line)}
+.ticket .t{font-family:var(--f-mono);font-weight:700;color:var(--teal);font-size:1.05rem}
+.ticket h3{margin-bottom:6px}
+.ticket .why{margin-top:10px;font-size:.9rem;color:var(--mute)}
+.ticket .why b{color:var(--teal-d);font-family:var(--f-head);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
+.ticket.hot{border-color:var(--amber);box-shadow:0 0 0 3px rgba(249,183,38,.18)}
+.tally{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.chip{font-family:var(--f-mono);font-size:.8rem;background:var(--mist);color:var(--teal-d);padding:4px 10px;border-radius:99px;font-weight:700}
+@media (max-width:760px){.replay{grid-template-columns:1fr}.progress{position:static;grid-auto-flow:column;align-items:center;justify-content:start}.progress .bar{height:8px;width:160px}.progress .bar i{transform-origin:left}.ticket{grid-template-columns:1fr;gap:6px}.ticket::after{display:none}}
+
+/* numbers */
+#numbers{background:var(--teal);color:#fff}
+#numbers h2,#numbers .eyebrow{color:#fff}
+#numbers .lede{color:rgba(255,255,255,.82)}
+.rings{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.ring{display:grid;justify-items:center;text-align:center;gap:10px}
+.ring svg{width:150px;height:150px;max-width:100%}
+.ring circle{fill:none;stroke-width:9}
+.ring .bgc{stroke:rgba(255,255,255,.18)}
+.ring .fill{stroke:var(--green);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%}
+.ring .num{font-family:var(--f-head);font-weight:900;font-size:1.5rem;fill:#fff}
+.ring p{font-size:.9rem;color:rgba(255,255,255,.88);max-width:15em}
+@media (max-width:860px){.rings{grid-template-columns:repeat(2,1fr)}}
+
+/* brief */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.94rem}
+th{font-family:var(--f-head);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);background:var(--soft)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;width:42%}
+
+/* cases */
+#cases{background:var(--soft)}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);background:#fff;border-radius:18px;padding:clamp(20px,3.5vw,40px);margin-bottom:22px;align-items:center}
+.case>*{min-width:0}
+.case .tag{display:inline-block;font-family:var(--f-head);font-weight:800;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--plum);background:rgba(190,169,218,.35);padding:4px 10px;border-radius:99px;margin-bottom:12px}
+.case h3{font-size:1.45rem;margin-bottom:12px}
+.case .body{display:grid;gap:12px}
+.out{display:grid;gap:8px;margin-top:6px;padding-top:14px;border-top:1px solid var(--line)}
+.out p{font-size:.94rem}
+.out b{font-family:var(--f-head);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-right:6px}
+.viz{background:var(--soft);border-radius:14px;padding:20px}
+.viz small{display:block;margin-top:10px;color:var(--mute);font-size:.78rem}
+.cd{width:100%;height:auto;display:block}
+.cd text{font-family:var(--f-mono);font-weight:700;font-size:13px;fill:var(--ink)}
+.cd .lab{font-family:var(--f-body);font-weight:500;font-size:11px;fill:var(--mute)}
+.trays{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.tray{aspect-ratio:1;border-radius:10px;background:#fff;border:2px solid var(--line);display:grid;place-items:center;font-family:var(--f-mono);font-size:.72rem;color:var(--mute)}
+.tray.full{background:var(--amber);border-color:var(--amber);color:var(--ink);font-weight:700}
+.tray.new{background:var(--green);border-color:var(--green);color:var(--teal-d);font-weight:700}
+.rule{margin-top:12px;font-family:var(--f-mono);font-size:.8rem;color:var(--teal-d)}
+.meters{display:grid;gap:12px}
+.meter{background:#fff;border-radius:12px;padding:12px 14px;display:grid;gap:6px}
+.meter .top{display:flex;justify-content:space-between;gap:8px;font-size:.86rem;font-weight:600}
+.meter .top span{font-family:var(--f-mono);color:var(--teal);font-weight:700;font-size:.78rem}
+.meter .trk{height:8px;background:var(--mist);border-radius:99px;overflow:hidden}
+.meter .trk i{display:block;height:100%;background:var(--teal);transform-origin:left;transform:scaleX(var(--v))}
+.ladder{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ladder li{display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;padding:9px 12px;font-family:var(--f-head);font-weight:700;font-size:.88rem}
+.ladder li i{width:22px;height:22px;border-radius:6px;background:var(--mist);flex:none;display:grid;place-items:center;font-style:normal;font-family:var(--f-mono);font-size:.7rem;color:var(--teal-d)}
+.ladder li.done i{background:var(--green)}
+.box{margin-top:12px;display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--mute)}
+.note{background:#FFF3C4;border-radius:4px;padding:18px 16px 16px;box-shadow:0 10px 24px -14px rgba(0,0,0,.35);transform:rotate(-2deg);font-family:var(--f-mono);font-size:.9rem;max-width:280px;margin:0 auto;line-height:1.7}
+.note b{display:block;font-family:var(--f-head);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--plum);margin-bottom:6px}
+@media (max-width:860px){.case{grid-template-columns:1fr}}
+
+/* habits */
+.habits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.habit{position:relative;border:1px solid var(--line);border-radius:14px;padding:20px;min-height:170px;background:#fff;overflow:hidden;transition:border-color .25s ease}
+.habit .when{font-family:var(--f-mono);font-size:.72rem;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.habit h3{margin-top:8px}
+.habit p{margin-top:10px;font-size:.92rem;color:var(--mute);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.habit::after{content:"";position:absolute;right:-30px;bottom:-30px;width:90px;height:90px;border-radius:50%;background:var(--green);opacity:.25;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.habit:hover{border-color:var(--teal)}
+.habit:hover::after{transform:scale(1.5)}
+.habit:hover p{transform:translateY(-2px)}
+@media (max-width:860px){.habits{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.habits{grid-template-columns:1fr}}
+
+/* plan */
+#plan{background:var(--soft)}
+.plan-bar{height:12px;border-radius:99px;background:var(--mist);overflow:hidden;margin-bottom:22px}
+.plan-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal) 0 17%,var(--sky) 17% 33%,var(--green) 33% 67%,var(--lav) 67% 100%);transform-origin:left}
+.phases{display:grid;grid-template-columns:1fr 1fr 2fr 2fr;gap:14px}
+.phase{background:#fff;border-radius:14px;padding:18px;min-width:0}
+.phase .d{font-family:var(--f-mono);font-size:.74rem;color:var(--teal);font-weight:700}
+.phase h3{margin:6px 0 8px;font-size:1.02rem}
+.phase p{font-size:.9rem;color:var(--mute)}
+@media (max-width:860px){.phases{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.phases{grid-template-columns:1fr}}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:820px}
+details{border:1px solid var(--line);border-radius:12px;padding:0 18px;background:#fff}
+summary{cursor:pointer;list-style:none;font-family:var(--f-head);font-weight:800;padding:16px 0;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details .a{padding-bottom:18px;display:grid;gap:10px;color:var(--mute)}
+details ul{margin:0;padding-left:18px;display:grid;gap:6px}
+details b{color:var(--ink)}
+
+/* close */
+.close{background:var(--teal-d);color:#fff;text-align:left}
+.close h2{color:#fff;max-width:20em}
+.close p{margin-top:16px;color:rgba(255,255,255,.8)}
+footer{padding-block:22px;font-size:.78rem;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <div class="name">Urvishkumar Badreshiya</div>
+    <nav class="links" aria-label="Sections">
+      <a href="#replay">Shift replay</a><a href="#brief">Brief</a><a href="#cases">Cases</a><a href="#plan">Plan</a><a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Restaurant Manager · Pizza (Italian Concept) · Dubai</div>
+      <h1>A busy dining room, <em>run on a plan</em></h1>
+      <p class="intro">Restaurant floors run on dozens of small decisions an hour. I make them from a plan: the forecast, the rota, the travel path and the stock on hand. Most recently I helped open a new restaurant for an American brand in Birmingham.</p>
+      <div class="cta"><a class="btn go" href="#replay">Replay my busiest shift</a><a class="btn ghost" href="#cases">See the cases</a></div>
+    </div>
+    <div class="board" aria-label="Illustrative shift board">
+      <div class="board-top">
+        <span class="ttl">Shift board</span>
+        <span class="status"><i></i>On plan</span>
+        <span class="clock mono" id="clock">11:00</span>
+      </div>
+      <div class="panes">
+        <div class="pane">
+          <h4>Orders</h4>
+          <div class="rail">
+            <div class="tk"><b>Table 12</b><span>4 guests · mains</span></div>
+            <div class="tk al"><b>Table 7</b><span>allergy: dairy</span></div>
+            <div class="tk dl"><b>Rider</b><span>pick-up in 3 min</span></div>
+            <div class="tk"><b>Table 3</b><span>2 guests · desserts</span></div>
+          </div>
+        </div>
+        <div class="pane">
+          <h4>Travel path</h4>
+          <ul class="checks">
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7.5l3 3 7-7"/></svg>Entrance</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7.5l3 3 7-7"/></svg>Dining room</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7.5l3 3 7-7"/></svg>Hot side</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7.5l3 3 7-7"/></svg>Chillers</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 7.5l3 3 7-7"/></svg>Ovens at temp</li>
+            <li class="pend">○ Storage · 11:30</li>
+          </ul>
+        </div>
+        <div class="gauges">
+          <div class="g"><span class="lbl">Labour vs plan</span><span class="trk"><i style="--v:.72"></i></span><span class="val">on plan</span></div>
+          <div class="g"><span class="lbl">Prep to forecast</span><span class="trk"><i style="--v:.9"></i></span><span class="val">ready</span></div>
+          <div class="g"><span class="lbl">Guest comments</span><span class="trk"><i style="--v:.6"></i></span><span class="val">read</span></div>
+        </div>
+      </div>
+      <p class="board-foot">Illustrative board drawn for this page. The routines on it are mine.</p>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">The route so far</span><h2>From a factory floor in Gujarat to a dining room in Birmingham</h2></div>
+    <div class="story">
+      <div class="steps">
+        <p data-step="1">It started on a factory floor. At an engineering works in Gujarat that made spinning rings for textile mills, a slow machine or a late supplier showed in the day's output by evening. That job taught me to find the bottleneck first.</p>
+        <p data-step="2">An MBA at Aston University brought me to Birmingham in 2022, along with a role at a Greggs franchise. Within months I was running the site without a store manager and covering two more each week. Most products arrived ready to bake, and the skill was baking them off to what guests bought.</p>
+        <p data-step="3">Fresh Bake in Leicester was a new brand's first store. We wrote the routines from nothing, from the learning plan to the opening and closing checks. When the manager left, I ran the store alone.</p>
+        <p data-step="4">Shake Shack trained me at Canary Wharf. Its service standards come from fine dining: a host at the door, food run to the table, every complaint handled at the table.</p>
+        <p data-step="5">Then we opened Shake Shack in Birmingham, with queues outside for two weeks. Dubai is the next step, at a company growing homegrown brands across the Gulf.</p>
+      </div>
+      <aside class="route" aria-label="Route map">
+        <svg viewBox="0 0 300 150" role="img" aria-label="Gujarat to the UK to Dubai">
+          <path class="route-base" d="M40 110 C 90 20, 170 20, 220 60 S 270 120, 262 118"/>
+          <path class="route-line" d="M40 110 C 90 20, 170 20, 220 60 S 270 120, 262 118"/>
+          <circle cx="40" cy="110" r="6" fill="#007882"/><circle cx="220" cy="60" r="6" fill="#007882"/><circle cx="262" cy="118" r="7" fill="#93E080" stroke="#084A52" stroke-width="2"/>
+          <g class="route-dot"><circle r="5" fill="#F9B726"/></g>
+          <text x="22" y="134">Gujarat</text><text x="196" y="42">UK</text><text x="232" y="146">Dubai</text>
+        </svg>
+        <ul class="stops">
+          <li data-route="1"><div><b>Vikram Engineering Works</b><span>Gujarat · 2018–2021</span></div></li>
+          <li data-route="2"><div><b>Greggs · Euro Garages</b><span>Birmingham · 2022–2024</span></div></li>
+          <li data-route="3"><div><b>Fresh Bake</b><span>Leicester · 2024</span></div></li>
+          <li data-route="4"><div><b>Shake Shack Canary Wharf</b><span>London · 2024</span></div></li>
+          <li data-route="5"><div><b>Shake Shack Birmingham</b><span>2024–2025 · next: Dubai</span></div></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="replay">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Shift replay</span><h2>International Burger Day, Birmingham, 28 May 2025</h2><p class="lede">Every burger two for one, a queue outside before opening and a 120 to 150-seat dining room. Here is how the day ran, ticket by ticket.</p></div>
+    <div class="replay">
+      <div class="progress" aria-hidden="true">
+        <span class="bar"><i id="dayfill"></i></span>
+        <div><div class="day">11:00 to close</div><small>Scroll to replay</small></div>
+      </div>
+      <div class="tickets">
+        <article class="ticket"><span class="t">10:30</span><div><h3>Queue forms, stations checked</h3><p>Before opening I walked the travel path, checking every station was stocked. The queue was already building, and the rota had enough people for whatever came.</p></div></article>
+        <article class="ticket hot"><span class="t">11:00</span><div><h3>Doors open, and a delivery arrives</h3><p>At the moment we opened, a delivery worth about £4,000 reached the back door. Chilled and frozen stock could not wait outside. I took two team members off Expo, the pass where orders are checked and handed out, and gave them twenty minutes to put it away.</p><p class="why"><b>Why</b>Stock temperature comes first, even at peak.</p></div></article>
+        <article class="ticket"><span class="t">11:05</span><div><h3>Running Expo alone</h3><p>Fifteen to twenty orders sat on the screen at once. The kitchen kept cooking at full speed, and anyone whose station was under control came across to help me on the pass.</p><p class="why"><b>Why</b>The team was cross-trained, so most people could work most stations.</p></div></article>
+        <article class="ticket"><span class="t">11:30</span><div><h3>Into the dining room</h3><p>With the two back on Expo, I moved to the hospitality station to support the one colleague looking after the whole dining room.</p></div></article>
+        <article class="ticket"><span class="t">12:00</span><div><h3>Off the stations, eyes on the floor</h3><p>Once service was on time, I stepped off the stations entirely. I restocked from the back, ran temperature checks, managed the team and talked to guests.</p><p class="why"><b>Why</b>A manager stuck on one station cannot see the whole room.</p></div></article>
+        <article class="ticket"><span class="t">15:00</span><div><h3>Breaks, two at a time</h3><p>As the rush eased, I covered the team's breaks in pairs so service never dropped.</p></div></article>
+        <article class="ticket"><span class="t">Close</span><div><h3>How the day ended</h3><p>No friction between team members, between the team and managers, or in the kitchen. The team enjoyed the shift as much as I did.</p><div class="tally"><span class="chip">£4,500+ from 11:00 to 15:00</span><span class="chip">about £11,000 for the day</span><span class="chip">roughly double a normal day</span></div></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Four numbers for this role</span><h2>Clean audits, steady production, groups served on time</h2></div>
+    <div class="rings">
+      <div class="ring"><svg viewBox="0 0 100 100"><circle class="bgc" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" data-pct="99.9"/><text class="num" x="50" y="57" text-anchor="middle" data-count="99.9" data-dec="1" data-suffix="%">99.9%</text></svg><p>Full site audit in my last week at Birmingham: "A near perfectly managed Shack!"</p></div>
+      <div class="ring"><svg viewBox="0 0 100 100"><circle class="bgc" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" data-pct="98.71"/><text class="num" x="50" y="57" text-anchor="middle" data-count="98.71" data-dec="2" data-suffix="%">98.71%</text></svg><p>NSF food safety audit with zero critical findings</p></div>
+      <div class="ring"><svg viewBox="0 0 100 100"><circle class="bgc" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" data-pct="100"/><text class="num" x="50" y="57" text-anchor="middle" data-count="1000" data-dec="0" data-suffix="">1,000</text></svg><p>Items baked off a day at a Greggs site from central production, 500 to 1,000 depending on the day</p></div>
+      <div class="ring"><svg viewBox="0 0 100 100"><circle class="bgc" cx="50" cy="50" r="44"/><circle class="fill" cx="50" cy="50" r="44" data-pct="100"/><text class="num" x="50" y="57" text-anchor="middle" data-count="52" data-dec="0" data-suffix="">52</text></svg><p>Guests in one group order, served on a countdown planned back from their arrival</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="brief">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Your brief, my evidence</span><h2>Where to find each part of the role</h2></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>The role</th><th>Where the evidence is</th></tr></thead>
+        <tbody>
+          <tr><td>Day-to-day operations in a fast-paced, high-volume restaurant</td><td>The shift replay above; opening weeks at Birmingham (CV)</td></tr>
+          <tr><td>Food quality, service, cleanliness and regular inspections</td><td>The audit rings above; floor walks every 90 minutes (habits)</td></tr>
+          <tr><td>Sales through upselling, promotions and customer engagement</td><td>Case 3; quarterly menu launches (CV)</td></tr>
+          <tr><td>Sales, costs, wastage and operational reports</td><td>The cost-of-goods report and weekly commercial report (CV)</td></tr>
+          <tr><td>Inventory, stock movement and work with supply chain teams</td><td>Case 2; ordering and delivery checks (CV)</td></tr>
+          <tr><td>Equipment and facilities kept in good order</td><td>Case 2; opening and closing checks (habits)</td></tr>
+          <tr><td>Staff scheduling, attendance and manpower</td><td>Case 4</td></tr>
+          <tr><td>Guest feedback and complaints</td><td>Case 5; reading every comment (habits)</td></tr>
+          <tr><td>Recruitment, onboarding and team development</td><td>Hiring and sign-offs (CV, case 4)</td></tr>
+          <tr><td>Dubai Municipality food safety requirements</td><td>Both Dubai food safety certificates, booked for month one (FAQ)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Five cases</span><h2>A big group, a central kitchen, a sales routine, a fair rota and a guest</h2></div>
+
+    <article class="case">
+      <div class="body">
+        <span class="tag">Case 1 · Pressure</span>
+        <h3>Fifty-two guests, one countdown</h3>
+        <p>A group of 52 booked ahead at Shake Shack Birmingham. I asked for each person's order five hours before arrival. The orders came two hours before, so I briefed the team and planned the service backwards from the moment they would walk in.</p>
+        <p>Stations stocked at 30 minutes. Chicken battered and ready for the fryer at 15. Buns, shakes and fries started at 5. Beef went on only once they arrived, because it cools fast. Three-quarters of the team ran the group while the rest kept serving everyone else.</p>
+        <div class="out"><p><b>Result</b>Everyone was served by the time the group had settled, and no other guest waited longer than usual.</p><p><b>Used next</b>Any large booking: plan backwards from the arrival time.</p></div>
+      </div>
+      <div class="viz">
+        <svg class="cd" viewBox="0 0 320 110" role="img" aria-label="Countdown from 30 minutes to arrival">
+          <line x1="20" y1="50" x2="300" y2="50" stroke="#DDF1F3" stroke-width="8" stroke-linecap="round"/>
+          <line class="cdfill" x1="20" y1="50" x2="300" y2="50" stroke="#007882" stroke-width="8" stroke-linecap="round"/>
+          <g class="cdm"><circle cx="20" cy="50" r="9" fill="#fff" stroke="#007882" stroke-width="3"/><text x="20" y="28" text-anchor="middle">−30</text><text class="lab" x="20" y="84" text-anchor="middle">Stations</text></g>
+          <g class="cdm"><circle cx="150" cy="50" r="9" fill="#fff" stroke="#007882" stroke-width="3"/><text x="150" y="28" text-anchor="middle">−15</text><text class="lab" x="150" y="84" text-anchor="middle">Chicken ready</text></g>
+          <g class="cdm"><circle cx="236" cy="50" r="9" fill="#fff" stroke="#007882" stroke-width="3"/><text x="236" y="28" text-anchor="middle">−5</text><text class="lab" x="236" y="84" text-anchor="middle">Buns, shakes</text></g>
+          <g class="cdm"><circle cx="300" cy="50" r="11" fill="#93E080" stroke="#084A52" stroke-width="3"/><text x="300" y="28" text-anchor="middle">0</text><text class="lab" x="292" y="84" text-anchor="middle">Arrival</text></g>
+        </svg>
+        <small>Minutes before the group arrives</small>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="body">
+        <span class="tag">Case 2 · Systems</span>
+        <h3>Food from a central kitchen, finished on site</h3>
+        <p>At Greggs most products came from central production and were baked off in store. At Fresh Bake, frozen and part-baked products and ready-made fillings arrived from outside. In both, the outlet's job was to finish food to the real pattern of sales.</p>
+        <p>The system suggested baking more than we sold, so I changed the rule. Instead of five of everything going cold, a new batch went in when two were left. Breakfast items ran until 11:00, with more baked at peak and less after 14:00.</p>
+        <p>The kit had to keep up. Ovens and fridges were checked at every opening and close, faults were logged and chased until fixed, planned maintenance stayed on schedule, and every repair quote was checked before it was approved.</p>
+        <div class="out"><p><b>Result</b>Bestsellers were on display from opening, and far less food went cold on the shelf.</p><p><b>Used next</b>Wherever food arrives ready-made, I set production to the sales pattern, not to the default.</p></div>
+      </div>
+      <div class="viz">
+        <div class="trays" aria-hidden="true">
+          <span class="tray full">1</span><span class="tray full">2</span><span class="tray">·</span><span class="tray">·</span><span class="tray new">bake</span>
+        </div>
+        <p class="rule">two left → next batch in</p>
+        <small>The just-in-time rule, drawn for this page</small>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="body">
+        <span class="tag">Case 3 · Sales</span>
+        <h3>Selling more on an ordinary shift</h3>
+        <p>Promotion days fill a restaurant, but ordinary shifts pay the bills. I tracked average spend week on week, set add-on targets for each shift and checked them before the team went home. After every promotion day, the sales went next to an ordinary day's, so we knew what the offer had added.</p>
+        <p>Some promotions were built to bring guests back. At a university event I led, competition winners took home a keychain with a QR code worth a buy-one-get-one, once a day for a year. Students came in and redeemed it at the counter.</p>
+        <div class="out"><p><b>Result</b>The team knew what each shift was aiming for, and promotions were judged on what they added.</p><p><b>Used next</b>Every offer should carry a reason to come back.</p></div>
+      </div>
+      <div class="viz">
+        <div class="meters">
+          <div class="meter"><div class="top">Average spend<span>weekly</span></div><div class="trk"><i style="--v:.78"></i></div></div>
+          <div class="meter"><div class="top">Add-ons against target<span>every shift</span></div><div class="trk"><i style="--v:.64"></i></div></div>
+          <div class="meter"><div class="top">Promotion day vs ordinary day<span>after each offer</span></div><div class="trk"><i style="--v:.92"></i></div></div>
+        </div>
+        <small>What I measured. Bars are illustrative.</small>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="body">
+        <span class="tag">Case 4 · People</span>
+        <h3>A rota people can plan a life around</h3>
+        <p>People stay where they can plan their week. The rota went out a week or more ahead. Days off were predictable, and back to back where possible. Earlies, lates and weekends were shared fairly, and the rota started from people's availability and the legal limits for younger team members.</p>
+        <p>Growth was visible too. At Shake Shack each step up the ladder was signed off on a real shift, run alone. Every successful sign-off was celebrated with a box of doughnuts for the whole team, a habit I carried from Canary Wharf to Birmingham.</p>
+        <div class="out"><p><b>Result</b>Shifts ran on full teams, and people worked towards their next sign-off together.</p><p><b>Used next</b>The first thing I would review in a new outlet is the rota against the plan.</p></div>
+      </div>
+      <div class="viz">
+        <ol class="ladder">
+          <li class="done"><i>1</i>Team member</li>
+          <li class="done"><i>2</i>Multi-station</li>
+          <li class="done"><i>3</i>Cross trainer</li>
+          <li><i>4</i>Assistant manager</li>
+          <li><i>5</i>Assistant general manager</li>
+          <li><i>6</i>General manager</li>
+        </ol>
+        <p class="box">Each sign-off: one real shift, run alone, checked on quality, compliance and guest care.</p>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="body">
+        <span class="tag">Case 5 · Guest</span>
+        <h3>An order on a sticky note</h3>
+        <p>At Fresh Bake, a couple who could neither hear nor speak came in. Both were allergic to dairy, and the order was getting stuck. I gave them pen and paper, then showed them each ingredient one by one until we agreed it exactly.</p>
+        <p>After their second visit, I wrote their order on a note by the till and briefed the team. From then on, anyone could show them the note and serve them. On my last shift they came in to say goodbye and took a photo with me.</p>
+        <div class="out"><p><b>Result</b>Two regulars with a serious allergy were served safely every time, by anyone on shift.</p><p><b>Used next</b>One fix for one guest becomes a routine the whole team can run.</p></div>
+      </div>
+      <div class="viz">
+        <div class="note"><b>Regulars · dairy allergy</b>Iced latte · oat milk<br>Iced mocha · almond milk</div>
+        <small style="text-align:center">The note, redrawn</small>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="habits">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Six habits</span><h2>What the team would notice in my first week</h2></div>
+    <div class="habits">
+      <div class="habit"><span class="when">Before service</span><h3>Forecast first</h3><p>The day's sales forecast comes before anything else. Staff, prep and orders follow it.</p></div>
+      <div class="habit"><span class="when">On shift</span><h3>Do it, then time it</h3><p>Each new task I do myself and time, then hand over with a time limit and proper coaching.</p></div>
+      <div class="habit"><span class="when">Every 90 minutes</span><h3>Walk the floor</h3><p>Thirteen checkpoints from the entrance to the staff room. Problems found early stay small.</p></div>
+      <div class="habit"><span class="when">Open and close</span><h3>Check the kit</h3><p>Ovens, fridges and holding temperatures checked and signed, with any fault logged before service.</p></div>
+      <div class="habit"><span class="when">Daily</span><h3>Read every comment</h3><p>Guest feedback read each morning and shared at the briefing. Low scores get a call to put things right.</p></div>
+      <div class="habit"><span class="when">Weekly</span><h3>Rota out early</h3><p>Published a week ahead, built from availability, with weekends and closes shared fairly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">First 90 days</span><h2>Learn the outlet, ask why, then fix what slows the floor</h2></div>
+    <div class="plan-bar"><i></i></div>
+    <div class="phases">
+      <div class="phase"><span class="d">Days 1–15</span><h3>Learn</h3><p>Train on every station and the brand's standards. Get certified for Dubai food safety (see FAQ).</p></div>
+      <div class="phase"><span class="d">Days 16–30</span><h3>Ask why</h3><p>Find out why each routine exists before changing anything, and map where service slows at peak.</p></div>
+      <div class="phase"><span class="d">Days 31–60</span><h3>Fix and test</h3><p>Try changes on the bottlenecks one at a time, and measure each against the outlet's own numbers.</p></div>
+      <div class="phase"><span class="d">Days 61–90</span><h3>Lock in</h3><p>Keep what worked, write it into the outlet's routine and train the team on it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Questions you might have</span><h2>Before we speak</h2></div>
+    <div class="faq">
+      <details open><summary>Why Kitopi?</summary><div class="a"><p>Kitopi builds brands from the region, for the region, and now runs them in dining rooms as well as delivery kitchens. A dining room is where a brand meets its guests face to face.</p><p>That part of the business is the work I know best.</p></div></details>
+      <details><summary>What will I bring with me?</summary><div class="a"><ul>
+        <li><b>Forecasting:</b> daily and weekly sales forecasts that set staffing, prep and orders.</li>
+        <li><b>Cost control:</b> stock counted against sales, variances traced to a cause, waste and labour reported every week.</li>
+        <li><b>Central production:</b> centrally made food finished in store to match what sells.</li>
+        <li><b>Food safety:</b> temperature logs, corrective actions, HACCP plans and audit walk-rounds.</li>
+        <li><b>Team building:</b> hiring for attitude, structured inductions, sign-offs on real shifts, recognition at the briefing.</li>
+        <li><b>Openings:</b> a brand's first store built from nothing and a new restaurant opened in a new city.</li>
+        <li><b>Delivery platforms:</b> rider hand-over, ratings and refund disputes with three platforms.</li>
+      </ul></div></details>
+      <details><summary>Can I work in the UAE?</summary><div class="a"><p>I am an Indian national and would join on an employment visa sponsored by Kitopi. I will complete my degree attestation for the visa.</p></div></details>
+      <details><summary>Will I relocate to Dubai, and when can I start?</summary><div class="a"><p>Yes. I am ready to move to Dubai and can start immediately, on any shift, including weekends and public holidays.</p></div></details>
+      <details><summary>Why this move?</summary><div class="a"><p>Because each step should be bigger than the last.</p></div></details>
+      <details><summary>Which languages do I speak?</summary><div class="a"><p>English, Hindi and Gujarati.</p></div></details>
+      <details><summary>What are my qualifications?</summary><div class="a"><p>MBA in Operations Management from Aston University and a B.Tech in Mechanical Engineering. Level 2 Food Safety, Fire Marshal and First Aid. BCS Foundation and Practitioner certificates in business analysis. In my first month: the Dubai Municipality person-in-charge certificate and HACCP Level 3.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#93E080">Restaurant Manager · Pizza (Italian Concept)</span>
+    <h2>I would like to help Kitopi's dining rooms run every shift on a plan, from the first ticket to close.</h2>
+    <p>Thank you for reading. My CV and cover letter are attached to my application.</p>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Personal page. Not affiliated with or endorsed by any employer named here.</span><span>Urvishkumar Badreshiya · 2026</span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var C = 2*Math.PI*44;
+  document.querySelectorAll('.ring .fill').forEach(function(c){
+    var p = parseFloat(c.dataset.pct)||0;
+    c.style.strokeDasharray = C;
+    c.style.strokeDashoffset = C*(1-p/100);
+  });
+  var steps = document.querySelectorAll('.story [data-step]');
+  var stops = document.querySelectorAll('.stops [data-route]');
+  function light(n){ stops.forEach(function(r){ r.classList.toggle('on', +r.dataset.route <= n); }); }
+  light(5);
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+  var ease = 'power2.out';
+
+  // hero: the board comes alive, clock runs 10:30 to 11:00
+  var clock = document.getElementById('clock'), tm = {m:630};
+  var hero = gsap.timeline({delay:.2});
+  hero.from('.tk',{x:28,opacity:.4,duration:.5,ease:ease,stagger:.12},0)
+      .to(tm,{m:660,duration:2,ease:'none',onUpdate:function(){var h=Math.floor(tm.m/60),mi=Math.round(tm.m%60);if(mi===60){h++;mi=0;}clock.textContent=(h<10?'0':'')+h+':'+(mi<10?'0':'')+mi;}},0)
+      .fromTo('.checks path',{strokeDashoffset:20},{strokeDashoffset:0,duration:.3,ease:ease,stagger:.32},.25)
+      .fromTo('.g .trk i',{scaleX:0},{scaleX:function(i,el){return parseFloat(getComputedStyle(el).getPropertyValue('--v'))||1;},duration:1.1,ease:ease,stagger:.15},.6);
+
+  // story: stops light per paragraph, route draws and the dot travels
+  light(0);
+  steps.forEach(function(s){
+    ScrollTrigger.create({trigger:s,start:'top 62%',end:'bottom 40%',
+      onEnter:function(){light(+s.dataset.step)},onEnterBack:function(){light(+s.dataset.step)}});
+  });
+  ScrollTrigger.create({trigger:'#story',start:'bottom 40%',onLeave:function(){light(5)}});
+  var line = document.querySelector('.route-line'), dot = document.querySelector('.route-dot');
+  if (line){
+    var L = line.getTotalLength();
+    gsap.fromTo(line,{strokeDasharray:L,strokeDashoffset:L},{strokeDashoffset:0,ease:'none',immediateRender:false,
+      scrollTrigger:{trigger:'#story',start:'top 70%',end:'bottom 60%',scrub:true}});
+    if (dot){
+      dot.setAttribute('transform','translate(262 118)');
+      ScrollTrigger.create({trigger:'#story',start:'top 70%',end:'bottom 60%',scrub:true,onUpdate:function(st){var pt=line.getPointAtLength(L*st.progress);dot.setAttribute('transform','translate('+pt.x+' '+pt.y+')');}});
+    }
+  }
+
+  // replay: progress bar follows the day, tickets slide in from the rail
+  var vertical = window.matchMedia('(min-width:761px)').matches;
+  gsap.fromTo('#dayfill',vertical?{scaleY:0}:{scaleX:0},Object.assign(vertical?{scaleY:1}:{scaleX:1},{ease:'none',immediateRender:false,scrollTrigger:{trigger:'.tickets',start:'top 70%',end:'bottom 70%',scrub:true}}));
+  gsap.utils.toArray('.ticket').forEach(function(el){
+    gsap.from(el,{x:24,opacity:.4,duration:.55,ease:ease,immediateRender:false,scrollTrigger:{trigger:el,start:'top 86%',once:true}});
+  });
+
+  // rings count up
+  document.querySelectorAll('.ring').forEach(function(r){
+    var f = r.querySelector('.fill'), n = r.querySelector('.num');
+    var p = parseFloat(f.dataset.pct)||0, target = parseFloat(n.dataset.count), dec = +(n.dataset.dec||0), suf = n.dataset.suffix||'';
+    var o = {v:0};
+    if (r.getBoundingClientRect().top < window.innerHeight) return;
+    ScrollTrigger.create({trigger:r,start:'top 85%',once:true,onEnter:function(){
+      gsap.fromTo(f,{strokeDashoffset:C},{strokeDashoffset:C*(1-p/100),duration:1.2,ease:ease});
+      gsap.fromTo(o,{v:0},{v:target,duration:1.2,ease:ease,onUpdate:function(){
+        n.textContent = o.v.toLocaleString('en-GB',{minimumFractionDigits:dec,maximumFractionDigits:dec})+suf;}});
+    }});
+  });
+
+  // case visuals
+  var cdf = document.querySelector('.cdfill');
+  if (cdf){
+    gsap.fromTo(cdf,{scaleX:0},{scaleX:1,svgOrigin:'20 50',duration:1.3,ease:ease,immediateRender:false,scrollTrigger:{trigger:cdf,start:'top 85%',once:true}});
+    gsap.from('.cdm',{opacity:.25,y:4,duration:.4,ease:ease,stagger:.3,immediateRender:false,scrollTrigger:{trigger:cdf,start:'top 85%',once:true}});
+  }
+  var trays = gsap.timeline({scrollTrigger:{trigger:'.trays',start:'top 85%',once:true}});
+  trays.from('.tray.new',{scale:.7,opacity:.3,duration:.5,ease:'back.out(2)'},.4);
+  gsap.fromTo('.meter .trk i',{scaleX:0},{scaleX:function(i,el){return parseFloat(getComputedStyle(el).getPropertyValue('--v'))||1;},duration:1,ease:ease,stagger:.18,immediateRender:false,scrollTrigger:{trigger:'.meters',start:'top 85%',once:true}});
+  gsap.from('.ladder li.done i',{scale:.6,duration:.45,ease:'back.out(2.2)',stagger:.2,immediateRender:false,scrollTrigger:{trigger:'.ladder',start:'top 85%',once:true}});
+  gsap.from('.note',{rotation:-9,y:10,duration:1,ease:'elastic.out(1,0.5)',immediateRender:false,scrollTrigger:{trigger:'.note',start:'top 88%',once:true}});
+
+  // plan bar fills
+  gsap.fromTo('.plan-bar i',{scaleX:0},{scaleX:1,duration:1.4,ease:ease,immediateRender:false,scrollTrigger:{trigger:'#plan',start:'top 75%',once:true}});
+})();
+</script>
+
+</body>
+</html>
